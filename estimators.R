@@ -908,7 +908,7 @@ weighted_centered_least_square <- function(
     }
     cA_tilde <- A - p_t_tilde
     
-    WCLS_weight <- ifelse(A, p_t_tilde / p_t, (1 - p_t_tilde) / (1 - p_t))
+    WCLS_weight <- ifelse(A, p_t_tilde / p_t, (1 - p_t_tilde) / (1 - p_t))# J_t in the formula 10
     
     p <- length(moderator_varname) + 1 # dimension of beta
     q <- length(control_varname) + 1 # dimension of alpha
