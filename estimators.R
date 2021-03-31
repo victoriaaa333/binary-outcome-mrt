@@ -930,10 +930,10 @@ weighted_centered_least_square <- function(
 
         ef <- rep(NA, length(theta)) # value of estimating function
         for (i in 1:q) {
-            ef[i] <- sum( weight * residual * avail * WCLS_weight * Zdm[, i])
+            ef[i] <- sum( weight * residual * avail * WCLS_weight * Zdm[, i]) #Zdm is g(H_t), the control variables with interept included
         }
         for (i in 1:p) {
-            ef[q + i] <- sum( weight * residual * avail * WCLS_weight * cA_tilde * Xdm[, i])
+            ef[q + i] <- sum( weight * residual * avail * WCLS_weight * cA_tilde * Xdm[, i]) #Xdm is S_t, the moderator variables with intercept included
         }
         
         ef <- ef / sample_size
